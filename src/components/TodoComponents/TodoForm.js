@@ -12,7 +12,7 @@ function TodoForm (props) {
         onChange={props.handleChange}
         name='task'
         />
-        <button>Add Todo</button>
+        <button onClick={props.addTodo}>Add Todo</button>
         <button>Clear All</button>
       </form>
     </div>

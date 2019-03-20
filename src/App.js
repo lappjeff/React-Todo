@@ -16,15 +16,26 @@ class App extends React.Component {
     this.state = {
       todos: todos,
       task: '',
-      id: Date.now(),
-      completed: false
     }
   }
 
   handleChanges = event => {
-    console.log('event: ', event.target.value)
     this.setState({
       task: event.target.value
+    })
+  }
+
+  addTodo = event => {
+    event.preventDefault();
+    const todosCopy = {
+      task: this.state.task,
+      id: Date.now(),
+      completed: false
+    }
+
+    this.setState({
+      todos: [...this.state.todos, todosCopy],
+      task: ''
     })
   }
   render() {
@@ -33,9 +44,10 @@ class App extends React.Component {
         <TodoList todos= { this.state.todos }/>
         <TodoForm
         task={this.state.task}
-        id={this.state.id}
-        completed={this.state.completed}
-        handleChange={this.handleChanges}/>
+        handleChange={this.handleChanges}
+        addTodo={this.addTodo}
+        />
+
       </div>
     );
   }
