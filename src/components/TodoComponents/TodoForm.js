@@ -5,7 +5,13 @@ function TodoForm (props) {
   return (
     <div className='form-wrapper'>
       <form>
-        <input placeholder='Input Todo'/>
+        <input
+        placeholder='Input Todo'
+        type='text'
+        value={props.task}
+        onChange={props.handleChange}
+        name='task'
+        />
         <button>Add Todo</button>
         <button>Clear All</button>
       </form>
