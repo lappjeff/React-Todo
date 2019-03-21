@@ -3,7 +3,9 @@ import './components/TodoComponents/Todo.scss'
 import TodoList from './components/TodoComponents/TodoList'
 import TodoForm from './components/TodoComponents/TodoForm'
 
-let todos = []
+let todos = [
+
+]
 
 class App extends React.Component {
   constructor() {
