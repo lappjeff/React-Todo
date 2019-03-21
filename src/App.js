@@ -69,7 +69,7 @@ class App extends React.Component {
     return (
       <div className='container'>
         <div className='header'>
-          <h1>ToDo</h1>
+          <h1>ToDo's</h1>
           <TodoForm
           task={this.state.task}
           handleChange={this.handleChanges}
