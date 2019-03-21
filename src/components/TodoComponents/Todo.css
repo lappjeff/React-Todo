@@ -1,0 +1,8 @@
+body {
+  background: teal;
+}
+
+li {
+  list-style-type: none;
+  color: white;
+}
