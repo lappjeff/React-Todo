@@ -10,7 +10,6 @@ function TodoList (props) {
   )
   return (
     <div className='list-container'>
-      <h1>Todos</h1>
       <ul className='todoItems'>
         {todoItems}
       </ul>

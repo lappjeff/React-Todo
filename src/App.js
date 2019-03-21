@@ -64,16 +64,23 @@ class App extends React.Component {
     })
 
   }
+
   render() {
     return (
       <div className='container'>
-        <TodoList todos= { this.state.todos } toggleComplete={this.toggleComplete}/>
-        <TodoForm
-        task={this.state.task}
-        handleChange={this.handleChanges}
-        addTodo={this.addTodo}
-        removeCompleted={this.removeCompleted}
-        />
+        <div className='header'>
+          <h1>ToDo</h1>
+          <TodoForm
+          task={this.state.task}
+          handleChange={this.handleChanges}
+          addTodo={this.addTodo}
+          removeCompleted={this.removeCompleted}
+          />
+        </div>
+        <main>
+          <TodoList todos= { this.state.todos } toggleComplete={this.toggleComplete}/>
+          <button onClick={this.removeCompleted}>Clear Completed</button>
+        </main>
 
       </div>
     );

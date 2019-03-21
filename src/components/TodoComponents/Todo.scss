@@ -1,13 +1,97 @@
-
+$main-color: #303C49;
+$secondary-color: #C25357;
+$accent-color: #1BDDC5;
 
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
+li {
+  list-style-type: none;
+  font-size: 30px;
+  margin: 10px;
+}
+
+button {
+  border: 2px solid white;
+  cursor: pointer;
+  color: white;
+  font-size: 20px
+}
 .container {
+  margin: 0 auto;
+  color: $secondary-color;
   width: 100%;
   height: 100vh;
+  background: $main-color;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header {
+  display: flex;
+  margin: 20px;
+  align-items: center;
+
+  h1 {
+    font-size: 60px;
+    margin: 20px;
+    color: white;
+  }
+
+  input {
+    height: 40px;
+    text-align: center;
+    margin: 20px;
+    padding: 30px 30px;
+    border: 1.5px solid $accent-color;
+    color: $main-color;
+    font-size: 18px;
+  }
+
+  button {
+    background: $main-color;
+
+    padding: 5px;
+    text-align: center;
+    height: 50px;
+  }
+}
+
+main {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background: $secondary-color;
+  min-height: 200px;
+  width: 50%;
+
+  button {
+    width: 100%;
+    background: $main-color;
+    color: white;
+    font-size: 15px;
+    height: 40px;
+  }
+}
+
+.form-wrapper {
+
+
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    button {
+      margin: 0 20px 0 20px;
+    }
+  }
 }
 .item-complete {
   text-decoration: line-through;
