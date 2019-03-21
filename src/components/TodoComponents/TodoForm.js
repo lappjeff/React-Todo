@@ -13,7 +13,7 @@ function TodoForm (props) {
         name='task'
         />
         <button onClick={props.addTodo}>Add Todo</button>
-        <button>Clear All</button>
+        <button>Clear Completed</button>
       </form>
     </div>
   )

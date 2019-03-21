@@ -1,22 +1,32 @@
 import React from 'react';
 import TodoList from './components/TodoComponents/TodoList'
 import TodoForm from './components/TodoComponents/TodoForm'
-const todos = [
-  {
-    task: 'Take out trash',
-    id: Date.now(),
-    completed: false
-  },
 
-]
+let todos = []
 
 class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      todos: todos,
+      todos,
       task: '',
     }
+  }
+
+  toggleComplete = itemId => {
+    this.setState(prevState => {
+      return {
+        todos: prevState.todos.map( todoItem => {
+          if(todoItem.id === itemId) {
+            return {
+              ...todoItem,
+              completed: !todoItem.completed
+            }
+          }
+          return todoItem
+        })
+      }
+    })
   }
 
   handleChanges = event => {
@@ -27,21 +37,22 @@ class App extends React.Component {
 
   addTodo = event => {
     event.preventDefault();
-    const todosCopy = {
-      task: this.state.task,
-      id: Date.now(),
-      completed: false
-    }
 
-    this.setState({
-      todos: [...this.state.todos, todosCopy],
-      task: ''
+    this.setState(prevState =>
+      { return {todos: [...prevState.todos,
+        {
+          task: prevState.task,
+          id: Date.now(),
+          completed: false,
+        }
+      ], task: '' }
     })
+
   }
   render() {
     return (
-      <div>
-        <TodoList todos= { this.state.todos }/>
+      <div className='container'>
+        <TodoList todos= { this.state.todos } toggleComplete={this.toggleComplete}/>
         <TodoForm
         task={this.state.task}
         handleChange={this.handleChanges}
