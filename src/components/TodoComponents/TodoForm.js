@@ -1,5 +1,5 @@
 import React from 'react'
-import './Todo.css'
+import './Todo.scss'
 
 function TodoForm (props) {
   return (
@@ -13,10 +13,11 @@ function TodoForm (props) {
         name='task'
         />
         <button onClick={props.addTodo}>Add Todo</button>
-        <button>Clear All</button>
+
       </form>
     </div>
   )
 }
+
 
 export default TodoForm
